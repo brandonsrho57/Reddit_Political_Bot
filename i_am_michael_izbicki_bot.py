@@ -2,109 +2,176 @@ import praw
 import random
 import datetime
 
-# FIXME:
-# copy your generate_comment functions from the week_07 lab here
+def generate_comment_0():
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joebiden = random.choice(joenames)
+    americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
+    america = random.choice(americanames)
+    legislation = ['legislation', 'bills', 'executive orders', 'laws']
+    document = random.choice(legislation)
+    econ = ['economy', 'bubble', 'stock market', 'financial world']
+    economy = random.choice(econ)
+    vp = ['VP', 'vice president', 'second commander in chief', 'president #2']
+    vicepresident = random.choice(vp)
 
-# connect to reddit
+    text = joebiden + " really cares about " + america + ".It's shown by the " + document + " he's passed during his tenure as " + vicepresident + ". I mean, who doesn't like him? While he was in office with Obama, he helped get the " + economy + " get back in shape after the 2008 recession."
+    return text
+
+def generate_comment_1():
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldtrump = random.choice(donaldnames)
+    americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
+    america = random.choice(americanames)
+    foreigncountrynames = ['China', 'Russia', 'Mexico', 'Canada', 'North Korea']
+    foreigncountry = random.choice(foreigncountrynames)
+    econ = ['economy', 'bubble', 'stock market', 'financial world']
+    economy = random.choice(econ)
+    covid = ['virus', 'Wuhan Virus', 'coronavirus', 'corona', 'Covid-19']
+    virus = random.choice(covid)
+
+    text = donaldtrump + " is literally the BEST. He will keep " + america + " great! He made our " + economy + " great and will do it again! We were just flubbed by the " + virus + ". He takes no crap from " + foreigncountry + "."
+    return text
+
+def generate_comment_2():
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joebiden = random.choice(joenames)
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldtrump = random.choice(donaldnames)
+    choose = ['vote', 'choose', 'pick', 'select', 'take']
+    vote = random.choice(choose)
+    jobs = ['blue-collar worker', 'white-collar worker', 'Walmart employee', 'programmer', 'student']
+    job = random.choice(jobs)
+    office = ['the White House', 'the Oval Office', 'office', 'the house']
+    wh = random.choice(office)
+
+    text = "Although both " + joebiden + " and " + donaldtrump + " are decent candidates, I'm inclined to " + vote + " " + joebiden + " because I'm just a " + job + " who just wants things to go back to what they were. If " + donaldtrump + " gets another 4 years in the " + wh + ", I'm afraid of the division."
+    return text
+
+#Last 3 will be unsupportive messages
+def generate_comment_3():
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joebiden = random.choice(joenames)
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldtrump = random.choice(donaldnames)
+    foreigncountrynames = ['China', 'Russia', 'Mexico', 'Canada', 'North Korea']
+    foreigncountry = random.choice(foreigncountrynames)
+    nicknames = ['Crooked Hillary', 'Rocket Man', 'Phony Kamala', 'Cryin Chuck', 'Pocohontas']
+    nickname = random.choice(nicknames)
+    prez = ['president', 'POTUS', 'President of the United States', 'prez', 'United States President']
+    president = random.choice(prez)
+    joenicknames = ['Sleepy Joe', 'Crooked Joe', 'Basement Joe', 'Joe-ker', 'Joe mama']
+    biden = random.choice(joenicknames)
+
+    text = "If you choose " + joebiden + " as the next " + president + ", I just want to let you know that you're publicly supporting " + nickname + " to run the country, not " + biden + ". Nobody has been harder on " + foreigncountry + " than " + donaldtrump + "."
+    return text
+
+def generate_comment_4():
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldtrump = random.choice(donaldnames)
+    foreigncountrynames = ['China', 'Russia', 'Mexico', 'Canada', 'North Korea']
+    foreigncountry = random.choice(foreigncountrynames)
+    covid = ['virus', 'Wuhan Virus', 'coronavirus', 'corona', 'Covid-19']
+    virus = random.choice(covid)
+    prez = ['president', 'POTUS', 'President of the United States', 'prez', 'United States President']
+    president = random.choice(prez)
+    office = ['the White House', 'the Oval Office', 'office', 'the house']
+    wh = random.choice(office)
+
+    text = donaldtrump + " has been in " + wh + " 4 years too long. He's a political lightweight and can't handle the job as the " + president + ". Just look what happened during the " + virus + ". " + foreigncountry + " literally hates his guts and we have to have good relations with them."
+    return text
+
+def generate_comment_5():
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joebiden = random.choice(joenames)
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldtrump = random.choice(donaldnames)
+    americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
+    america = random.choice(americanames)
+    foreigncountrynames = ['China', 'Russia', 'Mexico', 'Canada', 'North Korea']
+    foreigncountry = random.choice(foreigncountrynames)
+    jobs = ['blue-collar worker', 'white-collar worker', 'Walmart employee', 'programmer', 'student']
+    job = random.choice(jobs)
+
+    text = "Both candidates are straight garbage. " + joebiden + " is going senile while " + donaldtrump + " looks like an absolute clown on Twitter. The way we're headed, the " + america + " won't be around for much longer. I'd honestly rather have " + foreigncountry + " running this country because I, as a " + job + ", hate them."
+    return text
+
+def generate_comment():
+    for i in range(1):
+        options = [0,1,2,3,4,5]
+        choice = random.choice(options)
+        if choice == 0:
+            return generate_comment_0()
+        elif choice == 1:
+            return generate_comment_1()
+        elif choice == 2:
+            return generate_comment_2()
+        elif choice == 3:
+            return generate_comment_3()
+        elif choice == 4:
+            return generate_comment_4()
+        elif choice == 5:
+            return generate_comment_5()
+
 reddit = praw.Reddit('i_am_michael_izbicki_bot')
-
-# connect to the debate thread
 reddit_debate_url = 'https://www.reddit.com/r/csci040/comments/j9vb5b/the_2020_election_bot_debate_thread/'
 submission = reddit.submission(url=reddit_debate_url)
 
-# each iteration of this loop will post a single comment;
-# since this loop runs forever, your bot will continue posting comments forever;
-# (this is what makes it a deamon);
-# recall that you can press CTRL-C in the terminal to stop your bot
-#
-# HINT:
-# while you are writing and debugging your code,
-# you probably don't want it to run in an infinite loop;
-# you can change this while loop to an if statement to make the code run only once
 while True:
-
-    # printing the current time will help make the output messages more informative
-    # since things on reddit vary with time
     print()
     print('new iteration at:',datetime.datetime.now())
     print('submission.title=',submission.title)
     print('submission.url=',submission.url)
+    submission.comments.replace_more(limit=10)
 
-    # FIXME (task 0): get a list of all of the comments in the submission
-    # HINT: this requires using the .list() and the .replace_more() functions
     all_comments = []
-    # HINT:
-    # we need to make sure that our code is working correctly,
-    # and you should not move on from one task to the next until you are 100% sure that
-    # the previous task is working;
-    # in general, the way to check if a task is working is to print out information
-    # about the results of that task,
-    # and manually inspect that information to ensure it is correct;
-    # in this specific case, you should check the length of the all_comments variable,
-    # and manually ensure that the printed length is the same as the length displayed on reddit;
-    # if it's not, then there are some comments that you are not correctly identifying,
-    # and you need to figure out which comments those are and how to include them.
+    for comment in submission.comments.list():
+        all_comments.append(comment)
+    print('All Comments: ',all_comments)
     print('len(all_comments)=',len(all_comments))
 
-    # FIXME (task 1): filter all_comments to remove comments that were generated by your bot
-    # HINT:
-    # use a for loop to loop over each comment in all_comments,
-    # and an if statement to check whether the comment is authored by you or not
     not_my_comments = []
+    for comment in submission.comments.list():
+        if comment.author != 'imtherealcs40bot':
+            not_my_comments.append(comment)
 
-    # HINT:
-    # checking if this code is working is a bit more complicated than in the previous tasks;
-    # reddit does not directly provide the number of comments in a submission
-    # that were not gerenated by your bot,
-    # but you can still check this number manually by subtracting the number
-    # of comments you know you've posted from the number above;
-    # you can use comments that you post manually while logged into your bot to know
-    # how many comments there should be.
+    print('Not My Comments',not_my_comments)
     print('len(not_my_comments)=',len(not_my_comments))
 
-    # if the length of your all_comments and not_my_comments lists are the same,
-    # then that means you have not posted any comments in the current submission;
-    # (you bot may have posted comments in other submissions);
-    # your bot will behave differently depending on whether it's posted a comment or not
     has_not_commented = len(not_my_comments) == len(all_comments)
 
-    if not has_commented:
-        # FIXME (task 2)
-        # if you have not made any comment in the thread, then post a top level comment
-        #
-        # HINT:
-        # use the generate_comment() function to create the text,
-        # and the .reply() function to post it to reddit
+    if has_not_commented is True:
+        reply = generate_comment()
+        submission.reply(reply)
 
     else:
-        # FIXME (task 3): filter the not_my_comments list to also remove comments that
-        # you've already replied to
-        # HINT:
-        # there are many ways to accomplish this, but my solution uses two nested for loops
-        # the outer for loop loops over has_not_comments,
-        # and the inner for loop loops over all the replies of the current comment from the outer loop,
-        # and then an if statement checks whether the comment is authored by you or not
-        comments_without_replies = []
-        # HINT:
-        # this is the most difficult of the tasks,
-        # and so you will have to be careful to check that this code is in fact working correctly
-        print('len(comments_without_replies)=',len(comments_without_replies))
+        comments_without_my_replies = []
+        for comment in not_my_comments:
+            if comment.author != 'imtherealcs40bot':
+                response = False
+                for reply in comment.replies:
+                    if str(reply.author) == 'imtherealcs40bot':
+                        response = True
+                if response is False:
+                    comments_without_my_replies.append(comment)
+        print('Comments Without My Replies:', comments_without_my_replies)
+        print('len(comments_without_replies)=', len(comments_without_my_replies))
 
-        # FIXME (task 4): randomly select a comment from the comments_without_replies list,
-        # and reply to that comment
-        #
-        # HINT:
-        # use the generate_comment() function to create the text,
-        # and the .reply() function to post it to reddit
+        for comments in comments_without_my_replies:
+            selection = random.choice(comments_without_my_replies)
+            generated_reply = generate_comment()
+            try:
+                selection.reply(generated_reply)
+            except praw.exceptions.RedditAPIException as error:
+                if "DELETED_COMMENT" in str(error):
+                    print("Comment " + comment.id + " was deleted")
+                else:
+                    print(error)
 
-    # FIXME (task 5): select a new submission for the next iteration;
-    # your newly selected submission should have a 50% chance of being the original submission
-    # (url in the reddit_debate_url variable)
-    # and a 50% chance of being randomly selected from the top submissions to the csci040 subreddit for the past month
-    # HINT:
-    # use random.random() for the 50% chance,
-    # if the result is less than 0.5,
-    # then create a submission just like is done at the top of this page;
-    # otherwise, create a subreddit instance for the csci40 subreddit,
-    # use the .top() command with appropriate parameters to get the list of all submissions,
-    # then use random.choice to select one of the submissions
+    random_submission = reddit.subreddit('csci040').top(time_filter='month').random()
+    choices = [random_submission, submission]
+    number = random.randint(0, 101)
+
+    if number < 50:
+        submission = random_submission
+    else:
+        submission = reddit.submission(url=reddit_debate_url)
