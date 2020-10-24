@@ -113,7 +113,8 @@ def generate_comment():
             return generate_comment_5()
 
 reddit = praw.Reddit('i_am_michael_izbicki_bot')
-reddit_debate_url = 'https://www.reddit.com/r/csci040/comments/j9vb5b/the_2020_election_bot_debate_thread/'
+# reddit_debate_url = 'https://www.reddit.com/r/csci040/comments/j9vb5b/the_2020_election_bot_debate_thread/'
+reddit_debate_url = 'https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/'
 submission = reddit.submission(url=reddit_debate_url)
 
 while True:
@@ -121,7 +122,7 @@ while True:
     print('new iteration at:',datetime.datetime.now())
     print('submission.title=',submission.title)
     print('submission.url=',submission.url)
-    submission.comments.replace_more(limit=10)
+    submission.comments.replace_more(limit=None)
 
     all_comments = []
     for comment in submission.comments.list():
@@ -167,7 +168,7 @@ while True:
                 else:
                     print(error)
 
-    random_submission = reddit.subreddit('csci040').top(time_filter='month').random()
+    random_submission = reddit.subreddit('csci040temp').top(time_filter='month')
     choices = [random_submission, submission]
     number = random.randint(0, 101)
 
