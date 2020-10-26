@@ -174,20 +174,20 @@ while True:
                     print('Error Found: ', error)
 
     # Task 5 (2 points)
-    rand = random.random()
-    all_submissions = []
-    if rand >= 0.5:
+    randomnumber = random.random()
+    allsubmissions = []
+    if randomnumber >= 0.5:
         print('Original Submission')
         submission = reddit.submission(url='https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/')
         submission.reply(generate_comment())
-    if rand < 0.5:
+    if randomnumber < 0.5:
         print('Top Subreddit Submission')
-        for submission in reddit.subreddit('csci040temp').top('day'):
-            all_submissions.append(submission)
-        submission_choice = random.choice(all_submissions)
-        submission = reddit.submission(id=submission_choice)
-        print('Submission ID: ',submission_choice)
-        print(submission_choice.title)
+        for submission in reddit.subreddit('csci040temp').top(time_filter='month'):
+            allsubmissions.append(submission)
+        newsubmission = random.choice(allsubmissions)
+        submission = reddit.submission(id=newsubmission)
+        print('Submission ID: ', newsubmission)
+        print(newsubmission.title)
 
 
     # Upvote any comment mentioning your favorite candidate: 1 point
@@ -215,3 +215,4 @@ while True:
             print('Submission Downvoted!')
 
 # Creating a subreddit for everyone? Priceless, but I'll settle on 5 points ¯\_(ツ)_/¯
+# I'll make you a moderator for an extra 2 on top of the 5 or I can make you moderator and un-moderate myself for 5 ^_^
