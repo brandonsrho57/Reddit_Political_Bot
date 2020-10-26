@@ -1,9 +1,11 @@
+# importing necessary libraries
 import praw
 import random
 import datetime
 
+# generate comments to post
 def generate_comment_0():
-    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.', "Obama's Vice President"]
     joebiden = random.choice(joenames)
     americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
     america = random.choice(americanames)
@@ -18,7 +20,7 @@ def generate_comment_0():
     return text
 
 def generate_comment_1():
-    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President', 'Businessman Trump', 'Trumpster']
     donaldtrump = random.choice(donaldnames)
     americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
     america = random.choice(americanames)
@@ -33,9 +35,9 @@ def generate_comment_1():
     return text
 
 def generate_comment_2():
-    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.', "Obama's Vice President"]
     joebiden = random.choice(joenames)
-    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President', 'Businessman Trump', 'Trumpster']
     donaldtrump = random.choice(donaldnames)
     choose = ['vote', 'choose', 'pick', 'select', 'take']
     vote = random.choice(choose)
@@ -47,11 +49,11 @@ def generate_comment_2():
     text = "Although both " + joebiden + " and " + donaldtrump + " are decent candidates, I'm inclined to " + vote + " " + joebiden + " because I'm just a " + job + " who just wants things to go back to what they were. If " + donaldtrump + " gets another 4 years in the " + wh + ", I'm afraid of the division."
     return text
 
-#Last 3 will be unsupportive messages
+# Last 3 will be unsupportive messages
 def generate_comment_3():
-    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.', "Obama's Vice President"]
     joebiden = random.choice(joenames)
-    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President', 'Businessman Trump', 'Trumpster']
     donaldtrump = random.choice(donaldnames)
     foreigncountrynames = ['China', 'Russia', 'Mexico', 'Canada', 'North Korea']
     foreigncountry = random.choice(foreigncountrynames)
@@ -81,9 +83,9 @@ def generate_comment_4():
     return text
 
 def generate_comment_5():
-    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.',"Obama's Vice President"]
+    joenames = ['Joe', 'Biden', 'Joe Biden', 'Joseph Biden', 'Joey', 'Joseph', 'Joseph Robinette Biden Jr.', "Obama's Vice President"]
     joebiden = random.choice(joenames)
-    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President','Businessman Trump', 'Trumpster']
+    donaldnames = ['Donald', 'Trump', 'Donald Trump', 'Donald J. Trump', 'Donald John Trump', 'The President', 'Businessman Trump', 'Trumpster']
     donaldtrump = random.choice(donaldnames)
     americanames = ['America', 'USA', 'United States of America', 'Murica', 'States', 'US']
     america = random.choice(americanames)
@@ -97,7 +99,7 @@ def generate_comment_5():
 
 def generate_comment():
     for i in range(1):
-        options = [0,1,2,3,4,5]
+        options = [0, 1, 2, 3, 4, 5]
         choice = random.choice(options)
         if choice == 0:
             return generate_comment_0()
@@ -112,32 +114,33 @@ def generate_comment():
         elif choice == 5:
             return generate_comment_5()
 
+# connect to the submission with the bot
 reddit = praw.Reddit('i_am_michael_izbicki_bot')
-# reddit_debate_url = 'https://www.reddit.com/r/csci040/comments/j9vb5b/the_2020_election_bot_debate_thread/'
 reddit_debate_url = 'https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/'
 submission = reddit.submission(url=reddit_debate_url)
 
 while True:
     print()
-    print('new iteration at:',datetime.datetime.now())
-    print('submission.title=',submission.title)
-    print('submission.url=',submission.url)
+    print('New Iteration At: ', datetime.datetime.now())
+    print('Title of Submission: ', submission.title)
+    print('URL of Submission: ', submission.url)
     submission.comments.replace_more(limit=None)
 
+    # Task 0 (2 points)
     all_comments = []
     for comment in submission.comments.list():
         all_comments.append(comment)
-    print('All Comments: ',all_comments)
-    print('len(all_comments)=',len(all_comments))
+    print('Number of Comments: ', len(all_comments))
 
+    # Task 1 (2 points)
     not_my_comments = []
     for comment in submission.comments.list():
         if comment.author != 'imtherealcs40bot':
             not_my_comments.append(comment)
 
-    print('Not My Comments',not_my_comments)
-    print('len(not_my_comments)=',len(not_my_comments))
+    print('Number of Not My Comments: ', len(not_my_comments))
 
+    # Task 2 (2 points)
     has_not_commented = len(not_my_comments) == len(all_comments)
 
     if has_not_commented is True:
@@ -145,6 +148,8 @@ while True:
         submission.reply(reply)
 
     else:
+
+        # Task 3 (2 points)
         comments_without_my_replies = []
         for comment in not_my_comments:
             if comment.author != 'imtherealcs40bot':
@@ -154,9 +159,9 @@ while True:
                         response = True
                 if response is False:
                     comments_without_my_replies.append(comment)
-        print('Comments Without My Replies:', comments_without_my_replies)
-        print('len(comments_without_replies)=', len(comments_without_my_replies))
+        print('Number of Comments Without My Replies: ', len(comments_without_my_replies))
 
+        # Task 4 (2 points)
         for comments in comments_without_my_replies:
             selection = random.choice(comments_without_my_replies)
             generated_reply = generate_comment()
@@ -166,13 +171,47 @@ while True:
                 if "DELETED_COMMENT" in str(error):
                     print("Comment " + comment.id + " was deleted")
                 else:
-                    print(error)
+                    print('Error Found: ', error)
 
-    random_submission = reddit.subreddit('csci040temp').top(time_filter='month')
-    choices = [random_submission, submission]
-    number = random.randint(0, 101)
+    # Task 5 (2 points)
+    rand = random.random()
+    all_submissions = []
+    if rand >= 0.5:
+        print('Original Submission')
+        submission = reddit.submission(url='https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/')
+        submission.reply(generate_comment())
+    if rand < 0.5:
+        print('Top Subreddit Submission')
+        for submission in reddit.subreddit('csci040temp').top('day'):
+            all_submissions.append(submission)
+        submission_choice = random.choice(all_submissions)
+        submission = reddit.submission(id=submission_choice)
+        print('Submission ID: ',submission_choice)
+        print(submission_choice.title)
 
-    if number < 50:
-        submission = random_submission
-    else:
-        submission = reddit.submission(url=reddit_debate_url)
+
+    # Upvote any comment mentioning your favorite candidate: 1 point
+    for comment in submission.comments.list():
+        if 'trump' in comment.body.lower():
+            comment.upvote()
+            print('Comment Upvoted!')
+
+    # Downvote any comment mentioning the opposition: (Probably) 1 point 人(_ _*)
+    for comment in submission.comments.list():
+        if 'biden' in comment.body.lower():
+            comment.downvote()
+            print('Comment Downvoted!')
+
+    for submission in reddit.subreddit('csci040temp'):
+
+        # Upvote any submission mentioning your favorite candidate: 1 point
+        if 'trump' in submission.title.lower():
+            submission.upvote()
+            print('Submission Upvoted!')
+
+        # Downvote any submission mentioning the opposition: (Probably) 1 point 人(_ _*)
+        if 'biden' in submission.title.lower():
+            submission.downvote()
+            print('Submission Downvoted!')
+
+# Creating a subreddit for everyone? Priceless, but I'll settle on 5 points ¯\_(ツ)_/¯
