@@ -130,6 +130,7 @@ while True:
     all_comments = []
     for comment in submission.comments.list():
         all_comments.append(comment)
+
     print('Number of Comments: ', len(all_comments))
 
     # Task 1 (2 points)
