@@ -194,6 +194,8 @@ while True:
 
 # This can be put after task 4, but I've decided not to include it within the code for organizational reasons
 """
+# Bot writes more than 500 comments: 1 point
+
     # Upvote any comment mentioning your favorite candidate: 1 point
     for comment in submission.comments.list():
         if 'trump' in comment.body.lower():
@@ -218,7 +220,7 @@ while True:
             submission.downvote()
             print('Submission Downvoted!')
 
-    # Upvoting or downvoting comments based on subjectivity and polarity
+    # Upvoting or downvoting comments based on subjectivity and polarity (2 points)
     for comment in submission.comments.list():
         blob = TextBlob(str(comment.body))
         polarity = blob.sentiment.polarity
