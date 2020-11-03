@@ -23,7 +23,7 @@
 
 As you can see, the bot created a comment that trashed both candidates, which I thought was hilarious and shows that the bot can look human as well!
 
-#### What I believe my score *should* be
+#### What I believe my score *should* be:
 
 * One thing I noted in the file was that I completed some extra credit, but did not include it purposefully
 * This is because some of the extra credit can be placed in some blocks of code while others in different blocks
