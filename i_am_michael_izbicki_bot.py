@@ -1,7 +1,8 @@
-# importing necessary libraries
+i# importing necessary libraries
 import praw
 import random
 import datetime
+from textblob import TextBlob
 
 # generate comments to post
 def generate_comment_0():
@@ -191,7 +192,6 @@ while True:
         print('Submission ID: ', newsubmission)
         print(newsubmission.title)
 
-
     # Upvote any comment mentioning your favorite candidate: 1 point
     for comment in submission.comments.list():
         if 'trump' in comment.body.lower():
@@ -215,5 +215,21 @@ while True:
         if 'biden' in submission.title.lower():
             submission.downvote()
             print('Submission Downvoted!')
+
+    # Upvoting or downvoting comments based on subjectivity and polarity
+    for comment in submission.comments.list():
+        blob = TextBlob(str(comment.body))
+        polarity = blob.sentiment.polarity
+        subjectivity = blob.sentiment.subjectivity
+
+        if 'trump' in comment.body.lower() and polarity > 0.5:
+            comment.upvote()
+        if 'biden' in comment.body.lower() and polarity > 0.5:
+            comment.downvote()
+        if 'trump' in comment.body.lower() and subjectivity > 0:
+            comment.upvote()
+        if 'biden' in comment.body.lower() and subjectivity > 0:
+            comment.downvote()
+
 
 # Creating a subreddit for everyone? Priceless, but I'll settle on 5 points ¯\_(ツ)_/¯
