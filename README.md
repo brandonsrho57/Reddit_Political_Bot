@@ -22,3 +22,15 @@
 ![A screenshot of something I liked that the bot did](botexample.png)
 
 As you can see, the bot created a comment that trashed both candidates, which I thought was hilarious and shows that the bot can look human as well!
+
+#### What I believe my score *should* be
+
+* One thing I noted in the file was that I completed some extra credit, but did not include it purposefully
+* This is because some of the extra credit can be placed in some blocks of code while others in different blocks
+* I want the code reviewer (Mike, in this case) to be able to look at the code to check off marks as chronologically and not get messed up scoring extra credit randomly.
+* If you would like me to put the extra credit in the code, just let me know, but as of this moment, they are just listed after all of the tasks
+
+**I believe my score should be: **23 points**.**
+
+*However*, if you could award some extra credit points for creating and styling the reddit page with a plug to your website, it would be heavily appreciated...
+
