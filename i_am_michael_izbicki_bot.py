@@ -116,7 +116,8 @@ def generate_comment():
 
 # connect to the submission with the bot
 reddit = praw.Reddit('i_am_michael_izbicki_bot')
-reddit_debate_url = 'https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/'
+# reddit_debate_url = 'https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/'
+reddit_debate_url = 'https://www.reddit.com/r/csci040temp/comments/jmarit/rudy_giuliani_is_my_father_please_everyone_vote/'
 submission = reddit.submission(url=reddit_debate_url)
 
 while True:
@@ -216,4 +217,3 @@ while True:
             print('Submission Downvoted!')
 
 # Creating a subreddit for everyone? Priceless, but I'll settle on 5 points ¯\_(ツ)_/¯
-# I'll make you a moderator for an extra 2 on top of the 5 or I can make you moderator and un-moderate myself for 5 ^_^
