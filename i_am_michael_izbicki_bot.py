@@ -1,4 +1,4 @@
-i# importing necessary libraries
+# importing necessary libraries
 import praw
 import random
 import datetime
@@ -181,7 +181,7 @@ while True:
     allsubmissions = []
     if randomnumber >= 0.5:
         print('Original Submission')
-        submission = reddit.submission(url='https://www.reddit.com/r/csci040temp/comments/jhb20w/2020_debate_thread/')
+        submission = reddit.submission(url='https://www.reddit.com/r/csci040temp/comments/jmarit/rudy_giuliani_is_my_father_please_everyone_vote/')
         submission.reply(generate_comment())
     if randomnumber < 0.5:
         print('Top Subreddit Submission')
@@ -192,6 +192,8 @@ while True:
         print('Submission ID: ', newsubmission)
         print(newsubmission.title)
 
+# This can be put after task 4, but I've decided not to include it within the code for organizational reasons
+"""
     # Upvote any comment mentioning your favorite candidate: 1 point
     for comment in submission.comments.list():
         if 'trump' in comment.body.lower():
@@ -230,6 +232,7 @@ while True:
             comment.upvote()
         if 'biden' in comment.body.lower() and subjectivity > 0:
             comment.downvote()
+"""
 
 
 # Creating a subreddit for everyone? Priceless, but I'll settle on 5 points ¯\_(ツ)_/¯
