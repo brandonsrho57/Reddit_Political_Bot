@@ -24,6 +24,8 @@
 As you can see, the bot created a comment that trashed both candidates, which I thought was hilarious and shows that the bot can look human as well!
 
 #### Valid Comments
+
+```
 len(comments)= 1000
 len(top_level_comments)= 12
 len(replies)= 988
@@ -33,6 +35,7 @@ len(valid_replies)= 589
 ========================================
 valid_comments= 594
 ========================================
+```
 
 Process finished with exit code 0
 
