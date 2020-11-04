@@ -23,6 +23,19 @@
 
 As you can see, the bot created a comment that trashed both candidates, which I thought was hilarious and shows that the bot can look human as well!
 
+#### Valid Comments
+len(comments)= 1000
+len(top_level_comments)= 12
+len(replies)= 988
+len(valid_top_level_comments)= 5
+len(not_self_replies)= 988
+len(valid_replies)= 589
+========================================
+valid_comments= 594
+========================================
+
+Process finished with exit code 0
+
 #### What I believe my score *should* be:
 
 * One thing I noted in the file was that I completed some extra credit, but did not include it purposefully
